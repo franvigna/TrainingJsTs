@@ -1,58 +1,157 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1. Fundamentos de JavaScript</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>1. Fundamentos de JavaScript</h1>
-    <nav>
-      <a href="../../index.html">← Volver al índice</a>
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>1. Fundamentos de JavaScript</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>1. Fundamentos de JavaScript</h1>
+            <nav>
+                <a href="../../index.html">← Volver al índice</a>
+            </nav>
+        </header>
 
-  <main>
-    <section>
-      <h2>¿Qué es JavaScript?</h2>
-      <p>JavaScript es un lenguaje de programación que se ejecuta en el navegador y permite crear experiencias interactivas en sitios web.</p>
-    </section>
+        <main>
+            <section>
+                <h2>¿Qué es JavaScript?</h2>
+                <p>
+                    JavaScript es un lenguaje de programación que se ejecuta en
+                    el navegador y permite crear experiencias interactivas en
+                    sitios web.
+                </p>
+            </section>
 
-    <section>
-      <h2>Variables</h2>
-      <p>En JavaScript se pueden declarar variables con <code>var</code>, <code>let</code> y <code>const</code>. Hoy en día, se recomienda usar <code>let</code> y <code>const</code>.</p>
-      <pre><code>// Ejemplo
+            <section>
+                <h2>Sintaxis básica</h2>
+                <p>
+                    La sintaxis de JavaScript incluye reglas sobre cómo escribir
+                    instrucciones, usar puntos y comas, y cómo estructurar el
+                    código para que sea comprensible y funcional.
+                </p>
+            </section>
+
+            <section>
+                <h2>Variables</h2>
+                <p>
+                    En JavaScript se pueden declarar variables con
+                    <code>var</code>, <code>let</code> y <code>const</code>. Hoy
+                    en día, se recomienda usar <code>let</code> y
+                    <code>const</code>.
+                </p>
+
+                <pre>
+<code>// Ejemplo
 let nombre = "Juan";
-const PI = 3.14;
+const PI = 3.14;</code>
+</pre>
+            </section>
+
+            <section>
+                <h2>Tipos de datos primitivos</h2>
+                <ul>
+                    <li><strong>String</strong>: Cadenas de texto.</li>
+                    <li>
+                        <strong>Number</strong>: Números, ya sean enteros o
+                        decimales.
+                    </li>
+                    <li>
+                        <strong>Boolean</strong>: Valores lógicos,
+                        <code>true</code> o <code>false</code>.
+                    </li>
+                    <li>
+                        <strong>Null</strong>: Representa la ausencia
+                        intencional de un valor.
+                    </li>
+                    <li>
+                        <strong>Undefined</strong>: Indica que una variable no
+                        ha sido asignada.
+                    </li>
+                    <li>
+                        <strong>Symbol</strong>: Valores únicos e inmutables,
+                        introducidos en ES6.
+                    </li>
+                </ul>
+                <pre><code>let texto = "Hola";
+let numero = 123;
+let activo = true;
+let vacio = null;
+let sinValor;
+let simbolo = Symbol("id");
 </code></pre>
-    </section>
+            </section>
 
-    <section>
-      <h2>Tipos de datos</h2>
-      <ul>
-        <li><strong>String</strong> → Texto</li>
-        <li><strong>Number</strong> → Números (enteros o decimales)</li>
-        <li><strong>Boolean</strong> → true / false</li>
-        <li><strong>Undefined</strong> → Valor no definido</li>
-        <li><strong>Null</strong> → Valor nulo</li>
-        <li><strong>Object</strong> → Colección de datos</li>
-      </ul>
-    </section>
+            <section>
+                <h2>Operadores</h2>
+                <p>
+                    Se utilizan para realizar operaciones: aritméticas, de
+                    comparación y lógicas.
+                </p>
+                <pre><code>// Aritméticos
+let suma = 5 + 3;
+// Comparación
+let esIgual = (10 == "10");
+// Lógicos
+let resultado = true && false;
+</code></pre>
+            </section>
 
-    <section>
-      <h2>Ejemplo interactivo</h2>
-      <p>Hacé clic en el botón para mostrar un mensaje usando JavaScript:</p>
-      <button onclick="mostrarMensaje()">Mostrar mensaje</button>
-    </section>
+            <section>
+                <h2>Condicionales</h2>
+                <pre><code>let edad = 18;
+if (edad >= 18) {
+  console.log("Es mayor de edad");
+} else {
+  console.log("Es menor");
+}
 
-    <section>
-      <h2>Resultado</h2>
-      <div id="resultado"></div>
-    </section>
-  </main>
+let dia = 1;
+switch (dia) {
+  case 1: console.log("Lunes"); break;
+  case 2: console.log("Martes"); break;
+  case 3: console.log("Miercoles"); break;
+  case 4: console.log("Jueves"); break;
+  case 5: console.log("Viernes"); break;
+  case 6: console.log("Sabado"); break;
+  case 7: console.log("Domingo"); break;
+  default: console.log("Otro día");
+}
+</code></pre>
+            </section>
 
-  <script src="script.js"></script>
-</body>
+            <section>
+                <h2>Bucles</h2>
+                <pre><code>// for
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+}
+
+// while
+let j = 0;
+while (j < 3) {
+  console.log(j);
+  j++;
+}
+</code></pre>
+            </section>
+
+            <section>
+                <h2>Ejemplo interactivo</h2>
+                <p>
+                    Hacé clic en el botón para mostrar un mensaje usando
+                    JavaScript:
+                </p>
+                <button onclick="mostrarMensaje()">Mostrar mensaje</button>
+            </section>
+
+            <section>
+                <h2>Resultado</h2>
+                <div id="resultado"></div>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
 </html>

@@ -1,41 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título del Tema</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Título del Tema</h1>
-    <nav>
-      <a href="../../index.html">← Volver al índice</a>
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>2. Objetos y Arrays en JavaScript</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>2. Objetos y Arrays en JavaScript</h1>
+            <nav>
+                <a href="../../index.html">← Volver al índice</a>
+            </nav>
+        </header>
 
-  <main>
-    <section>
-      <h2>Descripción</h2>
-      <p>Explicación introductoria al tema. Qué es, para qué sirve y cómo se usa.</p>
-    </section>
+        <main>
+            <section>
+                <h2>Objetos en JavaScript</h2>
+                <p>
+                    Los objetos son colecciones de propiedades, donde cada
+                    propiedad se compone de una clave (nombre) y un valor.
+                </p>
+                <pre><code>const persona = {
+  nombre: "Ana",
+  edad: 30,
+  saludar: function() {
+    console.log("Hola, soy Ana");
+  }
+};</code></pre>
+            </section>
 
-    <section>
-      <h2>Ejemplo</h2>
-      <pre><code>// Código de ejemplo aquí
-function saludo() {
-  console.log("Hola desde JavaScript");
-}
-</code></pre>
-      <button onclick="ejecutar()">Probar código</button>
-    </section>
+            <section>
+                <h2>Acceso a propiedades</h2>
+                <p>
+                    Puedes acceder a las propiedades de un objeto utilizando la
+                    notación de punto o la notación de corchetes.
+                </p>
+                <pre><code>console.log(persona.nombre); // Notación de punto
+console.log(persona["edad"]); // Notación de corchetes</code></pre>
+            </section>
 
-    <section>
-      <h2>Resultado</h2>
-      <div id="resultado"></div>
-    </section>
-  </main>
+            <section>
+                <h2>Arrays en JavaScript</h2>
+                <p>
+                    Los arrays son listas ordenadas de elementos, que pueden ser
+                    de cualquier tipo de dato.
+                </p>
+                <pre><code>const frutas = ["manzana", "banana", "naranja"];</code></pre>
+            </section>
 
-  <script src="script.js"></script>
-</body>
+            <section>
+                <h2>Acceso a elementos de un array</h2>
+                <p>
+                    Puedes acceder a los elementos de un array utilizando su
+                    índice, comenzando desde 0.
+                </p>
+                <pre><code>console.log(frutas[0]); // "manzana"</code></pre>
+            </section>
+
+            <section>
+                <h2>Métodos comunes de arrays</h2>
+                <p>Algunos métodos útiles para manipular arrays son:</p>
+                <ul>
+                    <li>
+                        <code>push()</code>: Agrega un elemento al final del
+                        array.
+                    </li>
+                    <li>
+                        <code>pop()</code>: Elimina el último elemento del
+                        array.
+                    </li>
+                    <li>
+                        <code>shift()</code>: Elimina el primer elemento del
+                        array.
+                    </li>
+                    <li>
+                        <code>unshift()</code>: Agrega un elemento al inicio del
+                        array.
+                    </li>
+                    <li>
+                        <code>map()</code>: Crea un nuevo array con los
+                        resultados de la llamada a una función para cada
+                        elemento.
+                    </li>
+                    <li>
+                        <code>filter()</code>: Crea un nuevo array con todos los
+                        elementos que cumplan la condición implementada por la
+                        función dada.
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
 </html>
