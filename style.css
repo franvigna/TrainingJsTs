@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    height: 60px;
+    margin-right: 1rem;
+}
+
+.titulo-header {
+    flex: 1;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #abd14b;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    color: #444;
+}
+
+main {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+a {
+    color: #abd14b;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #abd14b;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #94b940;
+}
+
+#resultado {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #eafaf1;
+    border: 1px solid #abd14b;
+}
+
+.contenedor-guias {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+}
+
+#js,
+#ts {
+    min-width: 250px;
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .contenedor-guias {
+        flex-direction: column;
+        padding-right: 2rem;
+        border-right: 1px solid #7f7f7f;
+    }
+    .introduccion {
+        padding: 0 2rem;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin: 0 auto 1rem;
+    }
+}
