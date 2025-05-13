@@ -85,3 +85,39 @@ function obtenerDolar() {
         })
 }
 obtenerDolar()
+
+// ===================================
+// 5. Asincronia
+// ===================================
+
+setTimeout(() => {
+    console.log('setTimeout: Este mensaje aparece despues de 2 segundos')
+}, 2000)
+
+let cuenta = 0
+const idIntervalo = setInterval(() => {
+    cuenta++
+    console.log(`setInterval: iteracion ${cuenta}`)
+    if (cuenta === 3) {
+        clearInterval(idIntervalo)
+        console.log('clearInterval: Detenido en 3 iteraciones')
+    }
+}, 1000)
+
+async function obtenerDolarAsync() {
+    try {
+        const response = await fetch('https://dolarapi.com/v1/dolares/oficial')
+        if (!response.ok) {
+            throw new Error(`Error HTTP ${response.status}`)
+        }
+        const data = await response.json()
+        console.log('sync/Await: cotización Dólar Oficial')
+        console.log(`Compra: ${data.compra}`)
+        console.log(`Venta : ${data.venta}`)
+    } catch (error) {
+        console.error('Error capturado en async/await:', error.message)
+    } finally {
+        console.log('Async/Await: consulta finalizada')
+    }
+}
+obtenerDolarAsync()

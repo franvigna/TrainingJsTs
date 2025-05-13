@@ -55,3 +55,31 @@ button:hover {
   background-color: #eafaf1;
   border: 1px solid #abd14b;
 }
+/* Para todos los bloques <code> */
+code {
+    background-color: #2d2d2d; /* fondo oscuro */
+    color: #f8f8f2; /* texto claro */
+    font-family: 'Fira Code', monospace;
+    padding: 0.2em 0.4em; /* espacio interior */
+    border-radius: 4px;
+}
+
+/* Para bloques multilínea (<pre><code>…</code></pre>) */
+pre code {
+    display: block;
+    padding: 1rem;
+    overflow-x: auto;
+    line-height: 1.5;
+}
+
+/* Opcional: colorear los comentarios u otros fragmentos
+   (si envolvés en <span class="comment">…) */
+.comment {
+    color: #6272a4;
+}
+.keyword {
+    color: #ff79c6;
+}
+.string {
+    color: #f1fa8c;
+}

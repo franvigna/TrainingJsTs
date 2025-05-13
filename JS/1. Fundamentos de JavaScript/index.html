@@ -35,18 +35,11 @@
 
             <section>
                 <h2>Variables</h2>
-                <p>
-                    En JavaScript se pueden declarar variables con
-                    <code>var</code>, <code>let</code> y <code>const</code>. Hoy
-                    en día, se recomienda usar <code>let</code> y
-                    <code>const</code>.
-                </p>
-
-                <pre>
-<code>// Ejemplo
-let nombre = "Juan";
-const PI = 3.14;</code>
-</pre>
+                <pre><code>
+<span class="comment">// Ejemplo</span>
+<span class="keyword">let</span> nombre = <span class="string">"Juan"</span>;
+<span class="keyword">const</span> PI = <span class="string">3.14</span>;
+                </code></pre>
             </section>
 
             <section>
@@ -74,13 +67,14 @@ const PI = 3.14;</code>
                         introducidos en ES6.
                     </li>
                 </ul>
-                <pre><code>let texto = "Hola";
-let numero = 123;
-let activo = true;
-let vacio = null;
-let sinValor;
-let simbolo = Symbol("id");
-</code></pre>
+                <pre><code>
+<span class="keyword">let</span> texto = <span class="string">"Hola"</span>;
+<span class="keyword">let</span> numero = <span class="string">123</span>;
+<span class="keyword">let</span> activo = <span class="keyword">true</span>;
+<span class="keyword">let</span> vacio = <span class="keyword">null</span>;
+<span class="keyword">let</span> sinValor;
+<span class="keyword">let</span> simbolo = Symbol(<span class="string">"id"</span>);
+                </code></pre>
             </section>
 
             <section>
@@ -89,52 +83,55 @@ let simbolo = Symbol("id");
                     Se utilizan para realizar operaciones: aritméticas, de
                     comparación y lógicas.
                 </p>
-                <pre><code>// Aritméticos
-let suma = 5 + 3;
-// Comparación
-let esIgual = (10 == "10");
-// Lógicos
-let resultado = true && false;
-</code></pre>
+                <pre><code>
+<span class="comment">// Aritméticos</span>
+<span class="keyword">let</span> suma = <span class="string">5</span> + <span class="string">3</span>;
+<span class="comment">// Comparación</span>
+<span class="keyword">let</span> esIgual = (<span class="string">10</span> == <span class="string">"10"</span>);
+<span class="comment">// Lógicos</span>
+<span class="keyword">let</span> resultado = <span class="keyword">true</span> && <span class="keyword">false</span>;
+                </code></pre>
             </section>
 
             <section>
                 <h2>Condicionales</h2>
-                <pre><code>let edad = 18;
-if (edad >= 18) {
-  console.log("Es mayor de edad");
-} else {
-  console.log("Es menor");
+                <pre><code>
+<span class="keyword">let</span> edad = <span class="string">18</span>;
+<span class="keyword">if</span> (edad >= <span class="string">18</span>) {
+  console.log(<span class="string">"Es mayor de edad"</span>);
+} <span class="keyword">else</span> {
+  console.log(<span class="string">"Es menor"</span>);
 }
 
-let dia = 1;
-switch (dia) {
-  case 1: console.log("Lunes"); break;
-  case 2: console.log("Martes"); break;
-  case 3: console.log("Miercoles"); break;
-  case 4: console.log("Jueves"); break;
-  case 5: console.log("Viernes"); break;
-  case 6: console.log("Sabado"); break;
-  case 7: console.log("Domingo"); break;
-  default: console.log("Otro día");
+<span class="keyword">let</span> dia = <span class="string">1</span>;
+<span class="keyword">switch</span> (dia) {
+  <span class="keyword">case</span> <span class="string">1</span>: console.log(<span class="string">"Lunes"</span>); break;
+  <span class="keyword">case</span> <span class="string">2</span>: console.log(<span class="string">"Martes"</span>); break;
+  <span class="keyword">case</span> <span class="string">3</span>: console.log(<span class="string">"Miercoles"</span>); break;
+  <span class="keyword">case</span> <span class="string">4</span>: console.log(<span class="string">"Jueves"</span>); break;
+  <span class="keyword">case</span> <span class="string">5</span>: console.log(<span class="string">"Viernes"</span>); break;
+  <span class="keyword">case</span> <span class="string">6</span>: console.log(<span class="string">"Sabado"</span>); break;
+  <span class="keyword">case</span> <span class="string">7</span>: console.log(<span class="string">"Domingo"</span>); break;
+  <span class="keyword">default</span>: console.log(<span class="string">"Otro día"</span>);
 }
-</code></pre>
+                </code></pre>
             </section>
 
             <section>
                 <h2>Bucles</h2>
-                <pre><code>// for
-for (let i = 0; i < 3; i++) {
+                <pre><code>
+<span class="comment">// for</span>
+<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="string">0</span>; i < <span class="string">3</span>; i++) {
   console.log(i);
 }
 
-// while
-let j = 0;
-while (j < 3) {
+<span class="comment">// while</span>
+<span class="keyword">let</span> j = <span class="string">0</span>;
+<span class="keyword">while</span> (j < <span class="string">3</span>) {
   console.log(j);
   j++;
 }
-</code></pre>
+                </code></pre>
             </section>
 
             <section>

@@ -21,13 +21,15 @@
                     Los objetos son colecciones de propiedades, donde cada
                     propiedad se compone de una clave (nombre) y un valor.
                 </p>
-                <pre><code>const persona = {
-  nombre: "Ana",
+                <pre><code>
+<span class="keyword">const</span> persona = {
+  nombre: <span class="string">"Ana"</span>,
   edad: 30,
-  saludar: function() {
-    console.log("Hola, soy Ana");
+  saludar: <span class="keyword">function</span>() {
+    console.log(<span class="string">"Hola, soy Ana"</span>);
   }
-};</code></pre>
+};
+                </code></pre>
             </section>
 
             <section>
@@ -36,8 +38,10 @@
                     Puedes acceder a las propiedades de un objeto utilizando la
                     notación de punto o la notación de corchetes.
                 </p>
-                <pre><code>console.log(persona.nombre); // Notación de punto
-console.log(persona["edad"]); // Notación de corchetes</code></pre>
+                <pre><code>
+console.log(persona.nombre); <span class="comment">// Notación de punto</span>
+console.log(persona[<span class="string">"edad"</span>]); <span class="comment">// Notación de corchetes</span>
+                </code></pre>
             </section>
 
             <section>
@@ -46,7 +50,13 @@ console.log(persona["edad"]); // Notación de corchetes</code></pre>
                     Los arrays son listas ordenadas de elementos, que pueden ser
                     de cualquier tipo de dato.
                 </p>
-                <pre><code>const frutas = ["manzana", "banana", "naranja"];</code></pre>
+                <pre><code>
+<span class="keyword">const</span> frutas = [
+  <span class="string">"manzana"</span>, 
+  <span class="string">"banana"</span>, 
+  <span class="string">"naranja"</span>
+];
+                </code></pre>
             </section>
 
             <section>
@@ -55,7 +65,9 @@ console.log(persona["edad"]); // Notación de corchetes</code></pre>
                     Puedes acceder a los elementos de un array utilizando su
                     índice, comenzando desde 0.
                 </p>
-                <pre><code>console.log(frutas[0]); // "manzana"</code></pre>
+                <pre><code>
+console.log(frutas[<span class="string">0</span>]); <span class="comment">// "manzana"</span>
+                </code></pre>
             </section>
 
             <section>
@@ -63,30 +75,30 @@ console.log(persona["edad"]); // Notación de corchetes</code></pre>
                 <p>Algunos métodos útiles para manipular arrays son:</p>
                 <ul>
                     <li>
-                        <code>push()</code>: Agrega un elemento al final del
-                        array.
+                        <code><span class="keyword">push</span>()</code>: Agrega
+                        un elemento al final del array.
                     </li>
                     <li>
-                        <code>pop()</code>: Elimina el último elemento del
-                        array.
+                        <code><span class="keyword">pop</span>()</code>: Elimina
+                        el último elemento del array.
                     </li>
                     <li>
-                        <code>shift()</code>: Elimina el primer elemento del
-                        array.
+                        <code><span class="keyword">shift</span>()</code>:
+                        Elimina el primer elemento del array.
                     </li>
                     <li>
-                        <code>unshift()</code>: Agrega un elemento al inicio del
-                        array.
+                        <code><span class="keyword">unshift</span>()</code>:
+                        Agrega un elemento al inicio del array.
                     </li>
                     <li>
-                        <code>map()</code>: Crea un nuevo array con los
-                        resultados de la llamada a una función para cada
-                        elemento.
+                        <code><span class="keyword">map</span>()</code>: Crea un
+                        nuevo array con los resultados de la llamada a una
+                        función para cada elemento.
                     </li>
                     <li>
-                        <code>filter()</code>: Crea un nuevo array con todos los
-                        elementos que cumplan la condición implementada por la
-                        función dada.
+                        <code><span class="keyword">filter</span>()</code>: Crea
+                        un nuevo array con todos los elementos que cumplan la
+                        condición implementada por la función dada.
                     </li>
                 </ul>
             </section>

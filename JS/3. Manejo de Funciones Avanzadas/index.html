@@ -31,15 +31,16 @@
                     Estas funciones de los arrays permiten transformar, filtrar
                     o reducir los valores de un array sin mutarlo.
                 </p>
-                <pre><code>// map: duplica cada valor
-[1, 2, 3].map(n => n * 2); // [2, 4, 6]
+                <pre><code>
+<span class="comment">// map: duplica cada valor</span>
+[1, 2, 3].<span class="keyword">map</span>(n =&gt; n * 2); <span class="comment">// [2, 4, 6]</span>
 
-// filter: filtra los impares
-[1, 2, 3, 4].filter(n => n % 2 !== 0); // [1, 3]
+<span class="comment">// filter: filtra los impares</span>
+[1, 2, 3, 4].<span class="keyword">filter</span>(n =&gt; n % 2 !== 0); <span class="comment">// [1, 3]</span>
 
-// reduce: suma total
-[1, 2, 3].reduce((acc, n) => acc + n, 0); // 6
-</code></pre>
+<span class="comment">// reduce: suma total</span>
+[1, 2, 3].<span class="keyword">reduce</span>((acc, n) =&gt; acc + n, 0); <span class="comment">// 6</span>
+                </code></pre>
             </section>
 
             <section>
@@ -48,14 +49,15 @@
                     Es una técnica donde una función retorna otra. Es útil para
                     crear funciones personalizadas.
                 </p>
-                <pre><code>function saludar(saludo) {
-  return function(nombre) {
-    return saludo + ", " + nombre;
+                <pre><code>
+<span class="keyword">function</span> saludar(saludo) {
+  <span class="keyword">return</span> <span class="keyword">function</span>(nombre) {
+    <span class="keyword">return</span> saludo + <span class="string">", "</span> + nombre;
   };
 }
-const saludarHola = saludar("Hola");
-saludarHola("Ana"); // "Hola, Ana"
-</code></pre>
+<span class="keyword">const</span> saludarHola = saludar(<span class="string">"Hola"</span>);
+saludarHola(<span class="string">"Ana"</span>); <span class="comment">// "Hola, Ana"</span>
+                </code></pre>
             </section>
 
             <section>
@@ -64,14 +66,15 @@ saludarHola("Ana"); // "Hola, Ana"
                     Un callback es una función que se pasa como argumento a otra
                     y se ejecuta luego.
                 </p>
-                <pre><code>function procesarEntrada(nombre, callback) {
+                <pre><code>
+<span class="keyword">function</span> procesarEntrada(nombre, callback) {
   callback(nombre);
 }
 
-procesarEntrada("Ana", function(nombre) {
-  console.log("Hola " + nombre);
+procesarEntrada(<span class="string">"Ana"</span>, <span class="keyword">function</span>(nombre) {
+  console.log(<span class="string">"Hola "</span> + nombre);
 });
-</code></pre>
+                </code></pre>
             </section>
 
             <section>
@@ -80,14 +83,16 @@ procesarEntrada("Ana", function(nombre) {
                     Las promesas representan un valor que puede estar disponible
                     ahora, en el futuro, o nunca.
                 </p>
-                <pre><code>const promesa = new Promise((resolve, reject) => {
-  setTimeout(() => resolve("Listo"), 1000);
+                <pre><code>
+<span class="keyword">const</span> promesa = <span class="keyword">new</span> <span class="keyword">Promise</span>((resolve, reject) =&gt; {
+  <span class="keyword">setTimeout</span>(() =&gt; resolve(<span class="string">"Listo"</span>), 1000);
 });
 
-promesa.then(res => console.log(res))
-       .catch(err => console.error(err))
-       .finally(() => console.log("Finalizado"));
-</code></pre>
+promesa
+  .<span class="keyword">then</span>(res =&gt; console.log(res))
+  .<span class="keyword">catch</span>(err =&gt; console.error(err))
+  .<span class="keyword">finally</span>(() =&gt; console.log(<span class="string">"Finalizado"</span>));
+                </code></pre>
             </section>
 
             <section>
@@ -96,16 +101,17 @@ promesa.then(res => console.log(res))
                     Permite escribir código asincrónico de forma más legible,
                     como si fuera síncrono.
                 </p>
-                <pre><code>async function obtenerDato() {
-  try {
-    const res = await promesa;
+                <pre><code>
+<span class="keyword">async</span> <span class="keyword">function</span> obtenerDato() {
+  <span class="keyword">try</span> {
+    <span class="keyword">const</span> res = <span class="keyword">await</span> promesa;
     console.log(res);
-  } catch (error) {
+  } <span class="keyword">catch</span> (error) {
     console.error(error);
   }
 }
 obtenerDato();
-</code></pre>
+                </code></pre>
             </section>
 
             <section>
@@ -114,16 +120,17 @@ obtenerDato();
                     Permiten ejecutar funciones después de cierto tiempo o
                     repetidamente cada intervalo de tiempo.
                 </p>
-                <pre><code>setTimeout(() => {
-  console.log("Esto se ejecuta una vez");
+                <pre><code>
+<span class="keyword">setTimeout</span>(() =&gt; {
+  console.log(<span class="string">"Esto se ejecuta una vez"</span>);
 }, 1000);
 
-let contador = 0;
-const id = setInterval(() => {
-  console.log("Intervalo", ++contador);
-  if (contador === 3) clearInterval(id);
+<span class="keyword">let</span> contador = <span class="string">0</span>;
+<span class="keyword">const</span> id = <span class="keyword">setInterval</span>(() =&gt; {
+  console.log(<span class="string">"Intervalo"</span>, ++contador);
+  <span class="keyword">if</span> (contador === 3) clearInterval(id);
 }, 1000);
-</code></pre>
+                </code></pre>
             </section>
 
             <section>
@@ -132,12 +139,60 @@ const id = setInterval(() => {
                     Permite capturar errores para que no interrumpan la
                     ejecución del programa.
                 </p>
-                <pre><code>try {
-  throw new Error("Algo salió mal");
-} catch (e) {
-  console.error("Error atrapado:", e.message);
+                <pre><code>
+<span class="keyword">try</span> {
+  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="keyword">Error</span>(<span class="string">"Algo salió mal"</span>);
+} <span class="keyword">catch</span> (e) {
+  console.error(<span class="string">"Error atrapado:"</span>, e.message);
 }
-</code></pre>
+                </code></pre>
+            </section>
+
+            <!-- Nueva sección añadida -->
+            <section>
+                <h2>Diferencias: .then()/catch() vs Async/Await</h2>
+                <p>
+                    En JavaScript hay dos estilos principales para trabajar con
+                    promesas:
+                </p>
+                <ul>
+                    <li>
+                        <strong>.then()/catch()/finally()</strong>:
+                        <p>
+                            Encadena manejadores de éxito, error y limpieza
+                            directamente sobre la promesa.
+                        </p>
+                        <p>
+                            <em>Ventajas:</em> Funciona en entornos ES6 sin
+                            transpilar; fácil de usar para operaciones en
+                            paralelo (<code>Promise.all</code>).
+                        </p>
+                        <p>
+                            <em>Desventajas:</em> Las cadenas largas pueden
+                            resultar difíciles de leer y el manejo de errores
+                            puede dispersarse.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>async/await</strong>:
+                        <p>
+                            Azúcar sintáctica que permite pausar la ejecución de
+                            funciones marcadas como <code>async</code> hasta que
+                            la promesa se resuelva.
+                        </p>
+                        <p>
+                            <em>Ventajas:</em> Código que se lee de forma casi
+                            síncrona; manejo de errores unificado con
+                            <code>try/catch</code>; más fácil de depurar.
+                        </p>
+                        <p>
+                            <em>Desventajas:</em> Requiere ES2017 o
+                            transpilación; si no se usan
+                            <code>Promise.all</code> para paralelizar, puede
+                            ejecutar de forma secuencial sin necesidad.
+                        </p>
+                    </li>
+                </ul>
             </section>
         </main>
 
