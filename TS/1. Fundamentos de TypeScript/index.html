@@ -1,41 +1,159 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título del Tema - TypeScript</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Título del Tema</h1>
-    <nav>
-      <a href="../../index.html">← Volver al índice</a>
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>1. Fundamentos de JavaScript</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>1. Fundamentos de TypeScript</h1>
+            <nav>
+                <a href="../../index.html">← Volver al índice</a>
+            </nav>
+        </header>
 
-  <main>
-    <section>
-      <h2>Descripción</h2>
-      <p>Explicación introductoria al tema. Qué es, para qué sirve y cómo se usa en TypeScript.</p>
-    </section>
+        <main>
+            <section>
+                <h2>¿Qué es TypeScript?</h2>
+                <p>
+                    TypeScript es un lenguaje de programación desarrollado por 
+                    Microsoft que se basa en JavaScript, pero le agrega tipado estático y otras funcionalidades orientadas a grandes aplicaciones.
+                </p>
+            </section>
 
-    <section>
-      <h2>Ejemplo</h2>
-      <pre><code>// Código de ejemplo aquí
-function saludar(nombre: string): void {
-  console.log(`Hola, ${nombre}`);
+            <section>
+                <h2>Sintaxis básica</h2>
+                <p>
+                    La sintaxis de TypeScript se basa en la de JavaScript,
+                     pero incorpora reglas adicionales para declarar tipos de datos y
+                      estructuras más robustas. Incluye normas sobre cómo definir variables con tipos específicos, 
+                      cómo estructurar funciones con parámetros tipados, y cómo crear interfaces, clases y tipos personalizados para garantizar mayor claridad y seguridad en el código. Estas reglas permiten que los errores se detecten antes de ejecutar el
+                     programa y ayudan a que el código sea más legible, mantenible y fácil de escalar..
+                </p>
+            </section>
+
+            <section>
+                <h2>Variables</h2>
+                <p>
+                    En TypeScript se pueden declarar variables con
+                    <code>var</code>, <code>let</code> y <code>const</code>. Hoy
+                    en día, se recomienda usar <code>let</code> y
+                    <code>const</code>.
+                </p>
+
+                <pre>
+<code>// Ejemplo
+let nombre: String = Juan;
+const pi: Number= 3.14;
+</code>
+</pre>
+            </section>
+
+            <section>
+                <h2>Tipos de datos primitivos</h2>
+                <ul>
+                    <li><strong>String</strong>: Cadenas de texto.</li>
+                    <li>
+                        <strong>Number</strong>: Números, ya sean enteros o
+                        decimales.
+                    </li>
+                    <li>
+                        <strong>Boolean</strong>: Valores lógicos,
+                        <code>true</code> o <code>false</code>.
+                    </li>
+                    <li>
+                        <strong>Null</strong>: Representa la ausencia
+                        intencional de un valor.
+                    </li>
+                    <li>
+                        <strong>Undefined</strong>: Indica que una variable no
+                        ha sido asignada.
+                    </li>
+                    <li>
+                        <strong>Symbol</strong>: Valores únicos e inmutables,
+                        introducidos en ES6.
+                    </li>
+                </ul>
+                <pre><code>let texto = "Hola";
+let numero = 123;
+let activo = true;
+let vacio = null;
+let sinValor;
+let simbolo = Symbol("id");
+</code></pre>
+            </section>
+
+            <section>
+                <h2>Operadores</h2>
+                <p>
+                    Se utilizan para realizar operaciones: aritméticas, de
+                    comparación y lógicas.
+                </p>
+                <pre><code>// Aritméticos
+let suma = 5 + 3;
+// Comparación
+let esIgual = (10 == "10");
+// Lógicos
+let resultado = true && false;
+</code></pre>
+            </section>
+
+            <section>
+                <h2>Condicionales</h2>
+                <pre><code>let edad = 18;
+if (edad >= 18) {
+  console.log("Es mayor de edad");
+} else {
+  console.log("Es menor");
+}
+
+let dia = 1;
+switch (dia) {
+  case 1: console.log("Lunes"); break;
+  case 2: console.log("Martes"); break;
+  case 3: console.log("Miercoles"); break;
+  case 4: console.log("Jueves"); break;
+  case 5: console.log("Viernes"); break;
+  case 6: console.log("Sabado"); break;
+  case 7: console.log("Domingo"); break;
+  default: console.log("Otro día");
 }
 </code></pre>
-      <button onclick="ejecutar()">Probar código</button>
-    </section>
+            </section>
 
-    <section>
-      <h2>Resultado</h2>
-      <div id="resultado"></div>
-    </section>
-  </main>
+            <section>
+                <h2>Bucles</h2>
+                <pre><code>// for
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+}
 
-  <!-- <script src="script.ts"></script> -->
-</body>
+// while
+let j = 0;
+while (j < 3) {
+  console.log(j);
+  j++;
+}
+</code></pre>
+            </section>
+
+            <section>
+                <h2>Ejemplo interactivo</h2>
+                <p>
+                    Hacé clic en el botón para mostrar un mensaje usando
+                    JavaScript:
+                </p>
+                <button onclick="mostrarMensaje()">Mostrar mensaje</button>
+            </section>
+
+            <section>
+                <h2>Resultado</h2>
+                <div id="resultado"></div>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
 </html>
