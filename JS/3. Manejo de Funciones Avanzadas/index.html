@@ -1,41 +1,201 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título del Tema</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Título del Tema</h1>
-    <nav>
-      <a href="../../index.html">← Volver al índice</a>
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>3. Manejo de Funciones Avanzadas</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>3. Manejo de Funciones Avanzadas</h1>
+            <nav>
+                <a href="../../index.html">← Volver al índice</a>
+            </nav>
+        </header>
 
-  <main>
-    <section>
-      <h2>Descripción</h2>
-      <p>Explicación introductoria al tema. Qué es, para qué sirve y cómo se usa.</p>
-    </section>
+        <main>
+            <section>
+                <h2>Funciones de orden superior</h2>
+                <p>
+                    Son funciones que pueden recibir otras funciones como
+                    argumentos o devolver una función como resultado. Muy
+                    utilizadas en JavaScript para escribir código más expresivo
+                    y reutilizable.
+                </p>
+            </section>
 
-    <section>
-      <h2>Ejemplo</h2>
-      <pre><code>// Código de ejemplo aquí
-function saludo() {
-  console.log("Hola desde JavaScript");
+            <section>
+                <h2>map, filter, reduce</h2>
+                <p>
+                    Estas funciones de los arrays permiten transformar, filtrar
+                    o reducir los valores de un array sin mutarlo.
+                </p>
+                <pre><code>
+<span class="comment">// map: duplica cada valor</span>
+[1, 2, 3].<span class="keyword">map</span>(n =&gt; n * 2); <span class="comment">// [2, 4, 6]</span>
+
+<span class="comment">// filter: filtra los impares</span>
+[1, 2, 3, 4].<span class="keyword">filter</span>(n =&gt; n % 2 !== 0); <span class="comment">// [1, 3]</span>
+
+<span class="comment">// reduce: suma total</span>
+[1, 2, 3].<span class="keyword">reduce</span>((acc, n) =&gt; acc + n, 0); <span class="comment">// 6</span>
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Funciones que devuelven funciones</h2>
+                <p>
+                    Es una técnica donde una función retorna otra. Es útil para
+                    crear funciones personalizadas.
+                </p>
+                <pre><code>
+<span class="keyword">function</span> saludar(saludo) {
+  <span class="keyword">return</span> <span class="keyword">function</span>(nombre) {
+    <span class="keyword">return</span> saludo + <span class="string">", "</span> + nombre;
+  };
 }
-</code></pre>
-      <button onclick="ejecutar()">Probar código</button>
-    </section>
+<span class="keyword">const</span> saludarHola = saludar(<span class="string">"Hola"</span>);
+saludarHola(<span class="string">"Ana"</span>); <span class="comment">// "Hola, Ana"</span>
+                </code></pre>
+            </section>
 
-    <section>
-      <h2>Resultado</h2>
-      <div id="resultado"></div>
-    </section>
-  </main>
+            <section>
+                <h2>Callbacks</h2>
+                <p>
+                    Un callback es una función que se pasa como argumento a otra
+                    y se ejecuta luego.
+                </p>
+                <pre><code>
+<span class="keyword">function</span> procesarEntrada(nombre, callback) {
+  callback(nombre);
+}
 
-  <script src="script.js"></script>
-</body>
+procesarEntrada(<span class="string">"Ana"</span>, <span class="keyword">function</span>(nombre) {
+  console.log(<span class="string">"Hola "</span> + nombre);
+});
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Promesas</h2>
+                <p>
+                    Las promesas representan un valor que puede estar disponible
+                    ahora, en el futuro, o nunca.
+                </p>
+                <pre><code>
+<span class="keyword">const</span> promesa = <span class="keyword">new</span> <span class="keyword">Promise</span>((resolve, reject) =&gt; {
+  <span class="keyword">setTimeout</span>(() =&gt; resolve(<span class="string">"Listo"</span>), 1000);
+});
+
+promesa
+  .<span class="keyword">then</span>(res =&gt; console.log(res))
+  .<span class="keyword">catch</span>(err =&gt; console.error(err))
+  .<span class="keyword">finally</span>(() =&gt; console.log(<span class="string">"Finalizado"</span>));
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Async / Await</h2>
+                <p>
+                    Permite escribir código asincrónico de forma más legible,
+                    como si fuera síncrono.
+                </p>
+                <pre><code>
+<span class="keyword">async</span> <span class="keyword">function</span> obtenerDato() {
+  <span class="keyword">try</span> {
+    <span class="keyword">const</span> res = <span class="keyword">await</span> promesa;
+    console.log(res);
+  } <span class="keyword">catch</span> (error) {
+    console.error(error);
+  }
+}
+obtenerDato();
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>setTimeout y setInterval</h2>
+                <p>
+                    Permiten ejecutar funciones después de cierto tiempo o
+                    repetidamente cada intervalo de tiempo.
+                </p>
+                <pre><code>
+<span class="keyword">setTimeout</span>(() =&gt; {
+  console.log(<span class="string">"Esto se ejecuta una vez"</span>);
+}, 1000);
+
+<span class="keyword">let</span> contador = <span class="string">0</span>;
+<span class="keyword">const</span> id = <span class="keyword">setInterval</span>(() =&gt; {
+  console.log(<span class="string">"Intervalo"</span>, ++contador);
+  <span class="keyword">if</span> (contador === 3) clearInterval(id);
+}, 1000);
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Manejo de errores con try/catch</h2>
+                <p>
+                    Permite capturar errores para que no interrumpan la
+                    ejecución del programa.
+                </p>
+                <pre><code>
+<span class="keyword">try</span> {
+  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="keyword">Error</span>(<span class="string">"Algo salió mal"</span>);
+} <span class="keyword">catch</span> (e) {
+  console.error(<span class="string">"Error atrapado:"</span>, e.message);
+}
+                </code></pre>
+            </section>
+
+            <!-- Nueva sección añadida -->
+            <section>
+                <h2>Diferencias: .then()/catch() vs Async/Await</h2>
+                <p>
+                    En JavaScript hay dos estilos principales para trabajar con
+                    promesas:
+                </p>
+                <ul>
+                    <li>
+                        <strong>.then()/catch()/finally()</strong>:
+                        <p>
+                            Encadena manejadores de éxito, error y limpieza
+                            directamente sobre la promesa.
+                        </p>
+                        <p>
+                            <em>Ventajas:</em> Funciona en entornos ES6 sin
+                            transpilar; fácil de usar para operaciones en
+                            paralelo (<code>Promise.all</code>).
+                        </p>
+                        <p>
+                            <em>Desventajas:</em> Las cadenas largas pueden
+                            resultar difíciles de leer y el manejo de errores
+                            puede dispersarse.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>async/await</strong>:
+                        <p>
+                            Azúcar sintáctica que permite pausar la ejecución de
+                            funciones marcadas como <code>async</code> hasta que
+                            la promesa se resuelva.
+                        </p>
+                        <p>
+                            <em>Ventajas:</em> Código que se lee de forma casi
+                            síncrona; manejo de errores unificado con
+                            <code>try/catch</code>; más fácil de depurar.
+                        </p>
+                        <p>
+                            <em>Desventajas:</em> Requiere ES2017 o
+                            transpilación; si no se usan
+                            <code>Promise.all</code> para paralelizar, puede
+                            ejecutar de forma secuencial sin necesidad.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
 </html>
