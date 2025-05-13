@@ -1,41 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título del Tema</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Título del Tema</h1>
-    <nav>
-      <a href="../../index.html">← Volver al índice</a>
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>3. Manejo de Funciones Avanzadas</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>3. Manejo de Funciones Avanzadas</h1>
+            <nav>
+                <a href="../../index.html">← Volver al índice</a>
+            </nav>
+        </header>
 
-  <main>
-    <section>
-      <h2>Descripción</h2>
-      <p>Explicación introductoria al tema. Qué es, para qué sirve y cómo se usa.</p>
-    </section>
+        <main>
+            <section>
+                <h2>Funciones de orden superior</h2>
+                <p>
+                    Son funciones que pueden recibir otras funciones como
+                    argumentos o devolver una función como resultado. Muy
+                    utilizadas en JavaScript para escribir código más expresivo
+                    y reutilizable.
+                </p>
+            </section>
 
-    <section>
-      <h2>Ejemplo</h2>
-      <pre><code>// Código de ejemplo aquí
-function saludo() {
-  console.log("Hola desde JavaScript");
+            <section>
+                <h2>map, filter, reduce</h2>
+                <p>
+                    Estas funciones de los arrays permiten transformar, filtrar
+                    o reducir los valores de un array sin mutarlo.
+                </p>
+                <pre><code>// map: duplica cada valor
+[1, 2, 3].map(n => n * 2); // [2, 4, 6]
+
+// filter: filtra los impares
+[1, 2, 3, 4].filter(n => n % 2 !== 0); // [1, 3]
+
+// reduce: suma total
+[1, 2, 3].reduce((acc, n) => acc + n, 0); // 6
+</code></pre>
+            </section>
+
+            <section>
+                <h2>Funciones que devuelven funciones</h2>
+                <p>
+                    Es una técnica donde una función retorna otra. Es útil para
+                    crear funciones personalizadas.
+                </p>
+                <pre><code>function saludar(saludo) {
+  return function(nombre) {
+    return saludo + ", " + nombre;
+  };
+}
+const saludarHola = saludar("Hola");
+saludarHola("Ana"); // "Hola, Ana"
+</code></pre>
+            </section>
+
+            <section>
+                <h2>Callbacks</h2>
+                <p>
+                    Un callback es una función que se pasa como argumento a otra
+                    y se ejecuta luego.
+                </p>
+                <pre><code>function procesarEntrada(nombre, callback) {
+  callback(nombre);
+}
+
+procesarEntrada("Ana", function(nombre) {
+  console.log("Hola " + nombre);
+});
+</code></pre>
+            </section>
+
+            <section>
+                <h2>Promesas</h2>
+                <p>
+                    Las promesas representan un valor que puede estar disponible
+                    ahora, en el futuro, o nunca.
+                </p>
+                <pre><code>const promesa = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Listo"), 1000);
+});
+
+promesa.then(res => console.log(res))
+       .catch(err => console.error(err))
+       .finally(() => console.log("Finalizado"));
+</code></pre>
+            </section>
+
+            <section>
+                <h2>Async / Await</h2>
+                <p>
+                    Permite escribir código asincrónico de forma más legible,
+                    como si fuera síncrono.
+                </p>
+                <pre><code>async function obtenerDato() {
+  try {
+    const res = await promesa;
+    console.log(res);
+  } catch (error) {
+    console.error(error);
+  }
+}
+obtenerDato();
+</code></pre>
+            </section>
+
+            <section>
+                <h2>setTimeout y setInterval</h2>
+                <p>
+                    Permiten ejecutar funciones después de cierto tiempo o
+                    repetidamente cada intervalo de tiempo.
+                </p>
+                <pre><code>setTimeout(() => {
+  console.log("Esto se ejecuta una vez");
+}, 1000);
+
+let contador = 0;
+const id = setInterval(() => {
+  console.log("Intervalo", ++contador);
+  if (contador === 3) clearInterval(id);
+}, 1000);
+</code></pre>
+            </section>
+
+            <section>
+                <h2>Manejo de errores con try/catch</h2>
+                <p>
+                    Permite capturar errores para que no interrumpan la
+                    ejecución del programa.
+                </p>
+                <pre><code>try {
+  throw new Error("Algo salió mal");
+} catch (e) {
+  console.error("Error atrapado:", e.message);
 }
 </code></pre>
-      <button onclick="ejecutar()">Probar código</button>
-    </section>
+            </section>
+        </main>
 
-    <section>
-      <h2>Resultado</h2>
-      <div id="resultado"></div>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
