@@ -1,41 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título del Tema</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Título del Tema</h1>
-    <nav>
-      <a href="../../index.html">← Volver al índice</a>
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>4. Manejo de DOM</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>4. Manejo de DOM</h1>
+            <nav>
+                <a href="../../index.html">← Volver al índice</a>
+            </nav>
+        </header>
 
-  <main>
-    <section>
-      <h2>Descripción</h2>
-      <p>Explicación introductoria al tema. Qué es, para qué sirve y cómo se usa.</p>
-    </section>
+        <main>
+            <!-- 1. Selección de elementos -->
+            <section>
+                <h2>1. Selección de elementos</h2>
+                <p id="parrafo-demo">
+                    Este párrafo tiene <code>id="parrafo-demo"</code>.
+                </p>
+                <p class="clase-demo">
+                    Párrafo con clase <code>clase-demo</code> (primero).
+                </p>
+                <p class="clase-demo">
+                    Párrafo con clase <code>clase-demo</code> (segundo).
+                </p>
+                <button id="btn-seleccionar">
+                    Seleccionar y loguear elementos
+                </button>
+            </section>
 
-    <section>
-      <h2>Ejemplo</h2>
-      <pre><code>// Código de ejemplo aquí
-function saludo() {
-  console.log("Hola desde JavaScript");
-}
-</code></pre>
-      <button onclick="ejecutar()">Probar código</button>
-    </section>
+            <!-- 2. Modificación de contenido, atributos y estilos -->
+            <section>
+                <h2>2. Modificar contenido, atributos y estilos</h2>
+                <p id="texto">Texto original</p>
+                <button id="btn-contenido">Cambiar contenido</button>
 
-    <section>
-      <h2>Resultado</h2>
-      <div id="resultado"></div>
-    </section>
-  </main>
+                <h3>Imagen de ejemplo</h3>
+                <img
+                    id="imagen-demo"
+                    src="https://placehold.co/200x200"
+                    alt="Placeholder"
+                />
+                <button id="btn-atributos">Cambiar imagen y estilos</button>
+            </section>
 
-  <script src="script.js"></script>
-</body>
+            <!-- 3. Eventos y listeners -->
+            <section>
+                <h2>3. Eventos y Listeners</h2>
+                <button id="btn-click">Haz click aquí</button>
+                <div id="area-hover">Pasa el mouse por aquí</div>
+                <input
+                    id="input-key"
+                    placeholder="Escribí algo y presioná una tecla"
+                />
+                <div id="log-eventos"></div>
+            </section>
+
+            <!-- 4. Manipulación dinámica del DOM -->
+            <section>
+                <h2>4. Manipulación dinámica</h2>
+                <ul id="lista-dinamica">
+                    <li>Elemento inicial</li>
+                </ul>
+                <button id="btn-agregar">Agregar elemento</button>
+                <button id="btn-eliminar">Eliminar último elemento</button>
+            </section>
+
+            <!-- 5. To-Do List de prueba -->
+            <section id="todo-list">
+                <h2>5. To-Do List</h2>
+                <div class="todo-input">
+                    <input
+                        type="text"
+                        id="nueva-tarea"
+                        placeholder="Escribí una nueva tarea"
+                    />
+                    <ul id="lista-tareas">
+                        <!-- Aquí aparecerán las tareas -->
+                    </ul>
+                    <button id="btn-agregar-tarea">Agregar</button>
+                </div>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
 </html>

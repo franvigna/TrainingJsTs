@@ -1,70 +1,73 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-  background-color: #1e1e1e;
-  color: white;
-  padding: 1rem 2rem;
-  text-align: center;
-}
-
-nav {
-  margin-top: 0.5rem;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
 }
 
 nav a {
-  color: #abd14b;
-  text-decoration: none;
+    color: #abd14b;
+    text-decoration: none;
 }
 
 main {
-  padding: 2rem;
+    width: 80%;
+    margin: 0 auto;
 }
 
 section {
-  margin-bottom: 2rem;
-}
-
-pre {
-  background: #eee;
-  padding: 1rem;
-  overflow-x: auto;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
 }
 
 button {
-  background-color: #abd14b;
-  border: none;
-  color: white;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
+    background-color: #abd14b;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 button:hover {
-  background-color: #abd14b;
+    background-color: #94b940;
 }
 
-#resultado {
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: #eafaf1;
-  border: 1px solid #abd14b;
+#area-hover {
+    margin: 0.5rem 0;
+    padding: 1rem;
+    background-color: #e2e2e2;
+    text-align: center;
 }
-/* Para todos los bloques <code> */
+
+#lista-dinamica {
+    list-style: disc inside;
+    padding-left: 0;
+}
+
+#lista-dinamica li {
+    padding: 0.2rem 0;
+}
+
+/* Estilos de código */
 code {
-    background-color: #2d2d2d; /* fondo oscuro */
-    color: #f8f8f2; /* texto claro */
+    background-color: #2d2d2d;
+    color: #f8f8f2;
     font-family: 'Fira Code', monospace;
-    padding: 0.2em 0.4em; /* espacio interior */
+    padding: 0.2em 0.4em;
     border-radius: 4px;
 }
 
-/* Para bloques multilínea (<pre><code>…</code></pre>) */
 pre code {
     display: block;
     padding: 1rem;
@@ -72,8 +75,6 @@ pre code {
     line-height: 1.5;
 }
 
-/* Opcional: colorear los comentarios u otros fragmentos
-   (si envolvés en <span class="comment">…) */
 .comment {
     color: #6272a4;
 }
@@ -82,4 +83,68 @@ pre code {
 }
 .string {
     color: #f1fa8c;
+}
+
+/* Estilos para To-Do List */
+#todo-list {
+    width: 70%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+#todo-list .todo-input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+}
+#todo-list .todo-input button {
+    align-self: flex-end;
+}
+#todo-list input {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+#todo-list button {
+    padding: 0.5rem 1rem;
+}
+
+#lista-tareas {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+#lista-tareas li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+}
+
+#lista-tareas li.completed .texto-tarea {
+    text-decoration: line-through;
+    color: #777;
+}
+
+.todo-actions button {
+    margin-left: 0.5rem;
+    background: transparent;
+    color: #333;
+    border: none;
+    cursor: pointer;
+}
+
+.todo-actions button:hover {
+    color: #d14b4b;
+}
+#lista-tareas li .texto-tarea.completed {
+    text-decoration: line-through;
+    color: #777;
 }
