@@ -23,9 +23,9 @@ nav a {
 }
 
 main {
-  padding: 2rem;
+    width: 80%;
+    margin: 0 auto;
 }
-
 section {
   margin-bottom: 2rem;
 }
