@@ -57,7 +57,9 @@ section {
 ul {
     padding-left: 1.5rem;
 }
-
+li {
+    list-style: none;
+}
 a {
     color: #abd14b;
     text-decoration: none;
