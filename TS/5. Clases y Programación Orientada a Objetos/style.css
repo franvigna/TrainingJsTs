@@ -1,57 +1,58 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
-
 header {
-    background-color: #1e1e1e;
-    color: white;
-    padding: 1rem 2rem;
-    text-align: center;
+  background: #1e1e1e;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
 }
-
-nav {
-    margin-top: 0.5rem;
-}
-
 nav a {
-    color: #abd14b;
-    text-decoration: none;
+  color: #abd14b;
+  text-decoration: none;
 }
-
 main {
-    padding: 2rem;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
-
 section {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
 }
-
-pre {
-    background: #eee;
-    padding: 1rem;
-    overflow-x: auto;
-}
-
 button {
-    background-color: #abd14b;
-    border: none;
-    color: white;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
+  background: #abd14b;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
-
 button:hover {
-    background-color: #abd14b;
+  background: #94b940;
+}
+.resultado {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #eafaf1;
+  border: 1px solid #abd14b;
+  white-space: pre-wrap;
 }
 
-#resultado {
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: #eafaf1;
-    border: 1px solid #abd14b;
+/* Bloques de código */
+code {
+  display: block;
+  background: #2d2d2d;
+  color: #f8f8f2;
+  font-family: 'Fira Code', monospace;
+  padding: 0.5rem;
+  border-radius: 4px;
+  overflow-x: auto;
 }
+.keyword { color: #ff79c6; }
+.string  { color: #f1fa8c; }
+.comment { color: #6272a4; }

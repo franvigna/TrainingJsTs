@@ -1,41 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título del Tema - TypeScript</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Título del Tema</h1>
-    <nav>
-      <a href="../../index.html">← Volver al índice</a>
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>5. Clases y OOP - TypeScript</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>5. Clases y Programación Orientada a Objetos</h1>
+            <nav><a href="../../index.html">← Volver al índice</a></nav>
+        </header>
 
-  <main>
-    <section>
-      <h2>Descripción</h2>
-      <p>Explicación introductoria al tema. Qué es, para qué sirve y cómo se usa en TypeScript.</p>
-    </section>
-
-    <section>
-      <h2>Ejemplo</h2>
-      <pre><code>// Código de ejemplo aquí
-function saludar(nombre: string): void {
-  console.log(`Hola, ${nombre}`);
+        <main>
+            <!-- Clases básicas -->
+            <section>
+                <h2>• Clases y constructor</h2>
+                <pre><code>
+<span class="keyword">class</span> Persona {
+  <span class="keyword">public</span> nombre: <span class="keyword">string</span>;
+  <span class="keyword">constructor</span>(nombre: <span class="keyword">string</span>) {
+    <span class="keyword">this</span>.nombre = nombre;
+  }
+  saludar(): <span class="keyword">string</span> {
+    <span class="keyword">return</span> <span class="string">`Hola, soy ${this.nombre}`</span>;
+  }
 }
-</code></pre>
-      <button onclick="ejecutar()">Probar código</button>
-    </section>
+      </code></pre>
+            </section>
 
-    <section>
-      <h2>Resultado</h2>
-      <div id="resultado"></div>
-    </section>
-  </main>
+            <!-- Herencia -->
+            <section>
+                <h2>• Herencia de clases</h2>
+                <pre><code>
+<span class="keyword">class</span> Empleado <span class="keyword">extends</span> Persona {
+  <span class="keyword">private</span> salario: <span class="keyword">number</span>;
+  <span class="keyword">constructor</span>(n: <span class="keyword">string</span>, s: <span class="keyword">number</span>) {
+    <span class="keyword">super</span>(n);
+    <span class="keyword">this</span>.salario = s;
+  }
+  obtenerSalario(): <span class="keyword">number</span> {
+    <span class="keyword">return</span> this.salario;
+  }
+}
+      </code></pre>
+            </section>
 
-  <!-- <script src="script.ts"></script> -->
-</body>
+            <!-- Estáticos -->
+            <section>
+                <h2>• Miembros estáticos</h2>
+                <pre><code>
+<span class="keyword">class</span> Matematica {
+  <span class="keyword">static</span> PI: <span class="keyword">number</span> = <span class="string">3.1416</span>;
+  <span class="keyword">static</span> cuadrado(x: <span class="keyword">number</span>): <span class="keyword">number</span> {
+    <span class="keyword">return</span> x * x;
+  }
+}
+      </code></pre>
+            </section>
+
+            <!-- Modificadores -->
+            <section>
+                <h2>• Encapsulamiento y acceso</h2>
+                <pre><code>
+<span class="keyword">class</span> Cuenta {
+  <span class="keyword">private</span> saldo: <span class="keyword">number</span>;
+  <span class="keyword">constructor</span>(<span class="keyword">initial</span>: <span class="keyword">number</span>) {
+    <span class="keyword">this</span>.saldo = initial;
+  }
+  <span class="keyword">get</span> Saldo(): <span class="keyword">number</span> {
+    <span class="keyword">return</span> this.saldo;
+  }
+  <span class="keyword">set</span> Depositar(monto: <span class="keyword">number</span>) {
+    <span class="keyword">this</span>.saldo += monto;
+  }
+}
+      </code></pre>
+            </section>
+
+            <!-- Interfaces y abstractas -->
+            <section>
+                <h2>• Interfaces y clases abstractas</h2>
+                <pre><code>
+<span class="keyword">interface</span> Operable {
+  operar(a: <span class="keyword">number</span>, b: <span class="keyword">number</span>): <span class="keyword">number</span>;
+}
+
+<span class="keyword">class</span> Calculadora <span class="keyword">implements</span> Operable {
+  operar(a: <span class="keyword">number</span>, b: <span class="keyword">number</span>): <span class="keyword">number</span> {
+    <span class="keyword">return</span> a + b;
+  }
+}
+
+<span class="keyword">abstract class</span> Animal {
+  <span class="keyword">constructor</span>(<span class="keyword">public</span> nombre: <span class="keyword">string</span>) {}
+  <span class="keyword">abstract</span> emitirSonido(): <span class="keyword">void</span>;
+}
+
+<span class="keyword">class</span> Perro <span class="keyword">extends</span> Animal {
+  emitirSonido() { console.log(<span class="string">"¡Guau!"</span>); }
+}
+      </code></pre>
+            </section>
+
+            <!-- Ejecución -->
+            <section>
+                <h2>Ejecutar ejemplos</h2>
+                <button id="btn-oop5">Cargar ejemplos OOP</button>
+            </section>
+
+            <section>
+                <h2>Resultado</h2>
+                <div id="resultado5" class="resultado"></div>
+            </section>
+        </main>
+
+        <script src="../../dist/script5.js" defer></script>
+    </body>
 </html>

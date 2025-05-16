@@ -2,70 +2,69 @@
 // ==============================================
 // 1. Tipos compuestos
 // ==============================================
-const nums = [1, 2, 3];
-const tupla = ["edad", 21];
-;
-const pObj = { nombre: "Cisco", edad: 21 };
-const cObj = { a: "Hola", b: 5 };
-const idStr = "abc";
-const idNum = 123;
-const r1Value = (() => {
-    const test = 123;
-    return typeof test === 'string' ? 'es string' : 'no es string';
+const nums2 = [1, 2, 3];
+const tupla2 = ["edad", 21];
+const pObj2 = { nombre: "Cisco", edad: 21 };
+const cObj2 = { a: "Hola", b: 5 };
+const idStr2 = "abc";
+const idNum2 = 123;
+const r1Value2 = (() => {
+    const test2 = 123;
+    return typeof test2 === 'string' ? 'es string' : 'no es string';
 })();
-const r2Value = (() => {
-    const test = "hola";
-    return typeof test === 'string' ? 'es string' : 'no es string';
+const r2Value2 = (() => {
+    const test2 = "hola";
+    return typeof test2 === 'string' ? 'es string' : 'no es string';
 })();
 // ==============================================
 // 4. Tipos especiales
 // ==============================================
-let a = 10;
-let u = "desconocido";
-function fallo(msg) {
+let any2 = 10;
+let unk2 = "desconocido";
+function fallo2(msg) {
     throw new Error(msg);
 }
-function loguear(msg) {
+function loguear2(msg) {
     console.log(msg);
 }
 // ==============================================
 // 5. Generics
 // ==============================================
-function identidad(arg) {
+function identidad2(arg) {
     return arg;
 }
-const genNum = identidad(456);
-const genStr = identidad("genérico");
+const genNum2 = identidad2(456);
+const genStr2 = identidad2("genérico");
 // ==============================================
 // DOM
 // ==============================================
-function ejecutarAvanzados() {
-    const out = document.getElementById("resultado");
-    if (!out)
+function ejecutarAvanzados2() {
+    const out2 = document.getElementById("resultado");
+    if (!out2)
         return;
-    let texto = "";
-    texto += `nums: [${nums.join(", ")}]\n`;
-    texto += `tupla: [${tupla[0]}, ${tupla[1]}]\n`;
-    texto += `pObj: ${JSON.stringify(pObj)}\n`;
-    texto += `cObj (A&B): ${JSON.stringify(cObj)}\n`;
-    texto += `idStr | idNum: ${idStr}, ${idNum}\n`;
-    texto += `Direccion literal: arriba → 'arriba'\n`;
-    texto += `R1 (IsString<number>): ${r1Value}\n`;
-    texto += `R2 (IsString<"hola">): ${r2Value}\n`;
-    texto += `any a=10 → ${a}\n`;
-    texto += `unknown u="desconocido" → ${u}\n`;
-    texto += `genNum (identidad<number>): ${genNum}\n`;
-    texto += `genStr (identidad<string>): ${genStr}\n`;
+    let texto2 = "";
+    texto2 += `nums2: [${nums2.join(", ")}]\n`;
+    texto2 += `tupla2: [${tupla2[0]}, ${tupla2[1]}]\n`;
+    texto2 += `pObj2: ${JSON.stringify(pObj2)}\n`;
+    texto2 += `cObj2: ${JSON.stringify(cObj2)}\n`;
+    texto2 += `idStr2/idNum2: ${idStr2}, ${idNum2}\n`;
+    texto2 += `Direccion2 literal: arriba → 'arriba'\n`;
+    texto2 += `r1Value2: ${r1Value2}\n`;
+    texto2 += `r2Value2: ${r2Value2}\n`;
+    texto2 += `any2=10 → ${any2}\n`;
+    texto2 += `unk2="desconocido" → ${unk2}\n`;
+    texto2 += `genNum2: ${genNum2}\n`;
+    texto2 += `genStr2: ${genStr2}\n`;
     try {
-        fallo("Provocando never");
+        fallo2("Provocando never");
     }
     catch (e) {
-        texto += `fallo() capturado: ${e.message}\n`;
+        texto2 += `fallo2() capturado: ${e.message}\n`;
     }
-    out.textContent = texto;
+    out2.textContent = texto2;
 }
-// Hacemos global
+// exponer global
 ;
-window.ejecutarAvanzados = ejecutarAvanzados;
-document.getElementById("btn-avanzados")
-    .addEventListener("click", ejecutarAvanzados);
+window.ejecutarAvanzados2 = ejecutarAvanzados2;
+document.getElementById("btn-avanzados2")
+    .addEventListener("click", ejecutarAvanzados2);

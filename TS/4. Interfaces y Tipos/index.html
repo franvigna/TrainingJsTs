@@ -1,41 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título del Tema - TypeScript</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>4. Interfaces y Tipos - TypeScript</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header>
-    <h1>Título del Tema</h1>
-    <nav>
-      <a href="../../index.html">← Volver al índice</a>
-    </nav>
+    <h1>4. Interfaces y Tipos en TypeScript</h1>
+    <nav><a href="../../index.html">← Volver al índice</a></nav>
   </header>
 
   <main>
+    <!-- Interfaces -->
     <section>
-      <h2>Descripción</h2>
-      <p>Explicación introductoria al tema. Qué es, para qué sirve y cómo se usa en TypeScript.</p>
+      <h2>• Definir interfaces</h2>
+      <pre><code>
+<span class="keyword">interface</span> Persona {
+  nombre: <span class="keyword">string</span>;
+  edad: <span class="keyword">number</span>;
+}
+
+<span class="keyword">const</span> p: Persona = {
+  nombre: <span class="string">"Ana"</span>,
+  edad: <span class="string">30</span>
+};
+      </code></pre>
     </section>
 
     <section>
-      <h2>Ejemplo</h2>
-      <pre><code>// Código de ejemplo aquí
-function saludar(nombre: string): void {
-  console.log(`Hola, ${nombre}`);
+      <h2>• Extender interfaces</h2>
+      <pre><code>
+<span class="keyword">interface</span> Empleado <span class="keyword">extends</span> Persona {
+  salario: <span class="keyword">number</span>;
 }
-</code></pre>
-      <button onclick="ejecutar()">Probar código</button>
+
+<span class="keyword">const</span> e: Empleado = {
+  nombre: <span class="string">"Luis"</span>,
+  edad: <span class="string">28</span>,
+  salario: <span class="string">50000</span>
+};
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>• Implementar en clases</h2>
+      <pre><code>
+<span class="keyword">class</span> Cliente <span class="keyword">implements</span> Persona {
+  <span class="keyword">constructor</span>(
+    <span class="keyword">public</span> nombre: <span class="keyword">string</span>,
+    <span class="keyword">public</span> edad: <span class="keyword">number</span>
+  ) {}
+}
+
+<span class="keyword">const</span> c = <span class="keyword">new</span> Cliente(<span class="string">"Eva"</span>, <span class="string">35</span>);
+      </code></pre>
+    </section>
+
+    <!-- Types -->
+    <section>
+      <h2>• Definir tipos con <code>type</code></h2>
+      <pre><code>
+<span class="keyword">type</span> ID = <span class="keyword">string</span> | <span class="keyword">number</span>;
+<span class="keyword">const</span> id1: ID = <span class="string">"abc"</span>;
+<span class="keyword">const</span> id2: ID = <span class="string">123</span>;
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>• Tipos literales y uniones</h2>
+      <pre><code>
+<span class="keyword">type</span> Direccion = <span class="string">'arriba'</span> | <span class="string">'abajo'</span>;
+
+<span class="keyword">const</span> d: Direccion = <span class="string">'arriba'</span>;
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>• Extender tipos</h2>
+      <pre><code>
+<span class="keyword">type</span> Contacto = Persona & { email: <span class="keyword">string</span> };
+
+<span class="keyword">const</span> ct: Contacto = {
+  nombre: <span class="string">"Mía"</span>,
+  edad: <span class="string">27</span>,
+  email: <span class="string">"mia@mail.com"</span>
+};
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>• Tipos condicionales y genéricos</h2>
+      <pre><code>
+<span class="keyword">type</span> Elemento<T> = T extends <span class="keyword">string</span> ? <span class="keyword">string</span>[] : <span class="keyword">number</span>[];
+
+<span class="keyword">type</span> Rstr = Elemento<<span class="keyword">string</span>>;  <span class="comment">// string[]</span>
+<span class="keyword">type</span> Rnum = Elemento<<span class="keyword">number</span>>;  <span class="comment">// number[]</span>
+      </code></pre>
+    </section>
+
+    <!-- Botón y resultado -->
+    <section>
+      <h2>Ejecutar ejemplos</h2>
+      <button id="btn-tipos4">Cargar ejemplos</button>
     </section>
 
     <section>
       <h2>Resultado</h2>
-      <div id="resultado"></div>
+      <div id="resultado4" class="resultado"></div>
     </section>
   </main>
 
-  <!-- <script src="script.ts"></script> -->
+  <script src="../../dist/script4.js" defer></script>
 </body>
 </html>
