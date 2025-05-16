@@ -1,41 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título del Tema</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Título del Tema</h1>
-    <nav>
-      <a href="../../index.html">← Volver al índice</a>
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>5. POO en JavaScript</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>5. Programación Orientada a Objetos</h1>
+            <nav>
+                <a href="../../index.html">← Volver al índice</a>
+            </nav>
+        </header>
 
-  <main>
-    <section>
-      <h2>Descripción</h2>
-      <p>Explicación introductoria al tema. Qué es, para qué sirve y cómo se usa.</p>
-    </section>
-
-    <section>
-      <h2>Ejemplo</h2>
-      <pre><code>// Código de ejemplo aquí
-function saludo() {
-  console.log("Hola desde JavaScript");
+        <main>
+            <!-- 1. Clases y objetos -->
+            <section>
+                <h2>1. Clases y Objetos</h2>
+                <p>
+                    Definimos una clase <code>Persona</code> y creamos
+                    instancias.
+                </p>
+                <pre><code>
+<span class="keyword">class</span> Persona {
+  <span class="keyword">constructor</span>(nombre, edad) {
+    <span class="keyword">this</span>.nombre = nombre;
+    <span class="keyword">this</span>.edad = edad;
+  }
+  saludar() {
+    <span class="keyword">return</span> <span class="string">`Hola, soy ${this.nombre}`</span>;
+  }
 }
 </code></pre>
-      <button onclick="ejecutar()">Probar código</button>
-    </section>
+                <button id="btn-instanciar">Instanciar Persona</button>
+            </section>
 
-    <section>
-      <h2>Resultado</h2>
-      <div id="resultado"></div>
-    </section>
-  </main>
+            <!-- 2. Propiedades y métodos, getters y setters -->
+            <section>
+                <h2>2. Getters y Setters</h2>
+                <p>Controlamos acceso y validamos valores.</p>
+                <pre><code>
+<span class="keyword">class</span> Empleado {
+  <span class="keyword">constructor</span>(nombre, sueldo) {
+    <span class="keyword">this</span>.nombre = nombre;
+    <span class="keyword">this</span>._sueldo = sueldo;
+  }
+  <span class="keyword">get</span> sueldo() {
+    <span class="keyword">return</span> this._sueldo;
+  }
+  <span class="keyword">set</span> sueldo(valor) {
+    <span class="keyword">if</span>(valor &gt;= 0) this._sueldo = valor;
+  }
+}
+</code></pre>
+                <button id="btn-getset">Probar Getter/Setter</button>
+            </section>
 
-  <script src="script.js"></script>
-</body>
+            <!-- 3. Herencia y métodos estáticos -->
+            <section>
+                <h2>3. Herencia y Métodos estáticos</h2>
+                <p>Extender otra clase y usar un método estático.</p>
+                <pre><code>
+<span class="keyword">class</span> Animal {
+  <span class="keyword">constructor</span>(nombre) {
+    <span class="keyword">this</span>.nombre = nombre;
+  }
+  hablar() {
+    <span class="keyword">return</span> <span class="string">`${this.nombre} hace un sonido`</span>;
+  }
+}
+<span class="keyword">class</span> Perro <span class="keyword">extends</span> Animal {
+  hablar() {
+    <span class="keyword">return</span> <span class="string">`${this.nombre} ladra`</span>;
+  }
+  <span class="keyword">static</span> especie() {
+    <span class="keyword">return</span> <span class="string">"Canis lupus familiaris"</span>;
+  }
+}
+</code></pre>
+                <button id="btn-herencia">Probar Herencia</button>
+            </section>
+
+            <!-- 4. Encapsulamiento y abstracción -->
+            <section>
+                <h2>4. Encapsulamiento</h2>
+                <p>
+                    Propiedades privadas con <code>#</code> y métodos internos.
+                </p>
+                <pre><code>
+<span class="keyword">class</span> Cuenta {
+  #saldo;
+  <span class="keyword">constructor</span>(inicial) {
+    this.#saldo = inicial;
+  }
+  depositar(cant) {
+    this.#saldo += cant;
+  }
+  obtenerSaldo() {
+    <span class="keyword">return</span> this.#saldo;
+  }
+}
+</code></pre>
+                <button id="btn-cuenta">Probar Encapsulamiento</button>
+            </section>
+
+            <!-- 5. Resultado en el DOM -->
+            <section>
+                <h2>Resultado</h2>
+                <div id="oop-resultado"></div>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
 </html>

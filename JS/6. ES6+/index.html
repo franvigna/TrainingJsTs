@@ -1,41 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título del Tema</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Título del Tema</h1>
-    <nav>
-      <a href="../../index.html">← Volver al índice</a>
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>6. ES6+ (ECMAScript 2015+)</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>6. ES6+ (ECMAScript 2015+)</h1>
+            <nav><a href="../../index.html">← Volver al índice</a></nav>
+        </header>
 
-  <main>
-    <section>
-      <h2>Descripción</h2>
-      <p>Explicación introductoria al tema. Qué es, para qué sirve y cómo se usa.</p>
-    </section>
+        <main>
+            <!-- 1. Desestructuración de objetos -->
+            <section>
+                <h2>1. Desestructuración de objetos</h2>
+                <pre><code>
+<span class="keyword">const</span> usuario = { nombre: <span class="string">"Ana"</span>, edad: <span class="string">30</span>, pais: <span class="string">"AR"</span> };
+<span class="keyword">const</span> { nombre, pais } = usuario;
+      </code></pre>
+                <button id="btn-destruct-obj">Probar</button>
+                <div class="resultado" id="res-destruct-obj"></div>
+            </section>
 
-    <section>
-      <h2>Ejemplo</h2>
-      <pre><code>// Código de ejemplo aquí
-function saludo() {
-  console.log("Hola desde JavaScript");
+            <!-- 2. Desestructuración de arrays -->
+            <section>
+                <h2>2. Desestructuración de arrays</h2>
+                <pre><code>
+<span class="keyword">const</span> nums = [<span class="string">1</span>, <span class="string">2</span>, <span class="string">3</span>];
+<span class="keyword">const</span> [uno, , tres] = nums;
+      </code></pre>
+                <button id="btn-destruct-arr">Probar</button>
+                <div class="resultado" id="res-destruct-arr"></div>
+            </section>
+
+            <!-- 3. Spread operator -->
+            <section>
+                <h2>3. Spread Operator (…)</h2>
+                <pre><code>
+<span class="keyword">const</span> a = [<span class="string">1</span>, <span class="string">2</span>];
+<span class="keyword">const</span> b = [<span class="string">3</span>, <span class="string">4</span>];
+<span class="keyword">const</span> combinado = [...a, ...b];
+      </code></pre>
+                <button id="btn-spread">Probar</button>
+                <div class="resultado" id="res-spread"></div>
+            </section>
+
+            <!-- 4. Rest operator -->
+            <section>
+                <h2>4. Rest Operator (…)</h2>
+                <pre><code>
+<span class="keyword">function</span> sumar(<span class="keyword">...numeros</span>) {
+  <span class="keyword">return</span> numeros.reduce((a, b) => a + b, 0);
 }
-</code></pre>
-      <button onclick="ejecutar()">Probar código</button>
-    </section>
+      </code></pre>
+                <button id="btn-rest">Probar</button>
+                <div class="resultado" id="res-rest"></div>
+            </section>
 
-    <section>
-      <h2>Resultado</h2>
-      <div id="resultado"></div>
-    </section>
-  </main>
+            <!-- 5. Template literals -->
+            <section>
+                <h2>5. Template Literals</h2>
+                <pre><code>
+<span class="keyword">const</span> nom = <span class="string">"Juan"</span>;
+<span class="keyword">const</span> saludo = <span class="string">`Hola, ${nom}! Bienvenido`</span>;
+      </code></pre>
+                <button id="btn-template">Probar</button>
+                <div class="resultado" id="res-template"></div>
+            </section>
 
-  <script src="script.js"></script>
-</body>
+            <!-- 6. Módulos ES6 -->
+            <section>
+                <h2>6. Módulos (import / export)</h2>
+                <pre><code>
+<span class="keyword">// module.js</span>
+<span class="keyword">export default</span> <span class="keyword">function</span> areaCuadrado(lado) {
+  <span class="keyword">return</span> lado * lado;
+}<br>
+<span class="keyword">// index.html</span>
+&lt;script type="module" src="main.js"&gt;&lt;/script&gt;
+      </code></pre>
+                <button id="btn-modulo">Probar módulo</button>
+                <div class="resultado" id="res-modulo"></div>
+            </section>
+        </main>
+
+        <script src="script.js" defer></script>
+        <script type="module" src="main.js" defer></script>
+    </body>
 </html>

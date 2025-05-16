@@ -3,39 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título del Tema</title>
+  <title>8. JSON y APIs</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Título del Tema</h1>
-    <nav>
-      <a href="../../index.html">← Volver al índice</a>
-    </nav>
+    <h1>8. JSON y APIs</h1>
+    <nav><a href="../../index.html">← Volver al índice</a></nav>
   </header>
 
   <main>
+    <!-- 1. Trabajar con JSON -->
     <section>
-      <h2>Descripción</h2>
-      <p>Explicación introductoria al tema. Qué es, para qué sirve y cómo se usa.</p>
+      <h2>1. Trabajar con JSON</h2>
+      <pre><code>
+<span class="keyword">const</span> personaObj = { nombre: <span class="string">"Ana"</span>, edad: <span class="string">30</span> };
+<span class="comment">// Convertir objeto a JSON</span>
+<span class="keyword">const</span> jsonStr = JSON.<span class="keyword">stringify</span>(personaObj);
+
+<span class="comment">// Convertir JSON a objeto</span>
+<span class="keyword">const</span> persona2 = JSON.<span class="keyword">parse</span>(jsonStr);
+      </code></pre>
+      <button id="btn-json">Probar JSON</button>
+      <div class="resultado" id="res-json"></div>
     </section>
 
+    <!-- 2. Consumo de APIs con fetch -->
     <section>
-      <h2>Ejemplo</h2>
-      <pre><code>// Código de ejemplo aquí
-function saludo() {
-  console.log("Hola desde JavaScript");
-}
-</code></pre>
-      <button onclick="ejecutar()">Probar código</button>
-    </section>
-
-    <section>
-      <h2>Resultado</h2>
-      <div id="resultado"></div>
+      <h2>2. Consumo de APIs</h2>
+      <pre><code>
+<span class="comment">// Ejemplo de GET con fetch y manejo de errores</span>
+<span class="keyword">fetch</span>(<span class="string">'https://jsonplaceholder.typicode.com/posts/1'</span>)
+  .<span class="keyword">then</span>(res => {
+    <span class="keyword">if</span>(!res.ok) <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string">`HTTP error ${res.status}`</span>);
+    <span class="keyword">return</span> res.json();
+  })
+  .<span class="keyword">then</span>(data => console.log(data))
+  .<span class="keyword">catch</span>(err => console.error(err))
+  .<span class="keyword">finally</span>(() => console.log(<span class="string">'Fetch completado'</span>));
+      </code></pre>
+      <button id="btn-fetch">Probar Fetch</button>
+      <div class="resultado" id="res-fetch"></div>
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

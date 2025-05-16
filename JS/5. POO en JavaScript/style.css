@@ -13,27 +13,20 @@ header {
   text-align: center;
 }
 
-nav {
-  margin-top: 0.5rem;
-}
-
 nav a {
   color: #abd14b;
   text-decoration: none;
 }
 
 main {
-    width: 80%;
-    margin: 0 auto;
-}
-section {
-  margin-bottom: 2rem;
+  width: 80%;
+  margin: 0 auto;
 }
 
-pre {
-  background: #eee;
-  padding: 1rem;
-  overflow-x: auto;
+section {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
 }
 
 button {
@@ -43,15 +36,36 @@ button {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
+  margin-top: 0.5rem;
 }
 
 button:hover {
-  background-color: #abd14b;
+  background-color: #94b940;
 }
 
-#resultado {
+#oop-resultado {
   margin-top: 1rem;
   padding: 1rem;
-  background-color: #eafaf1;
+  background: #eafaf1;
   border: 1px solid #abd14b;
 }
+
+/* Código resaltado */
+code {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  font-family: 'Fira Code', monospace;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+pre code {
+  display: block;
+  padding: 1rem;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+.comment { color: #6272a4; }
+.keyword { color: #ff79c6; }
+.string  { color: #f1fa8c; }
