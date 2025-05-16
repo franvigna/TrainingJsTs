@@ -1,41 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título del Tema - TypeScript</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>12. Configuración y Herramientas</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header>
-    <h1>Título del Tema</h1>
-    <nav>
-      <a href="../../index.html">← Volver al índice</a>
-    </nav>
+    <h1>12. Configuración y Herramientas</h1>
+    <nav><a href="../../index.html">← Volver al índice</a></nav>
   </header>
-
   <main>
     <section>
-      <h2>Descripción</h2>
-      <p>Explicación introductoria al tema. Qué es, para qué sirve y cómo se usa en TypeScript.</p>
-    </section>
-
-    <section>
-      <h2>Ejemplo</h2>
-      <pre><code>// Código de ejemplo aquí
-function saludar(nombre: string): void {
-  console.log(`Hola, ${nombre}`);
+      <h2>tsconfig.json</h2>
+      <pre><code>{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "strict": true,
+    "noImplicitAny": true,
+    // …
+  }
 }
 </code></pre>
-      <button onclick="ejecutar()">Probar código</button>
     </section>
-
     <section>
-      <h2>Resultado</h2>
-      <div id="resultado"></div>
+      <h2>Scripts NPM</h2>
+      <pre><code>{
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js"
+  }
+}
+</code></pre>
+    </section>
+    <section>
+      <h2>Otras herramientas</h2>
+      <ul>
+        <li>Webpack / Babel: bundling y transpile</li>
+        <li>ESLint: linting</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN Web Docs</a></li>
+        <li><a href="https://pnp.github.io/pnpjs/">PnPjs</a></li>
+      </ul>
     </section>
   </main>
-
-  <!-- <script src="script.ts"></script> -->
 </body>
 </html>

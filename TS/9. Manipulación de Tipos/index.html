@@ -1,41 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título del Tema - TypeScript</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>11. Manipulación de Tipos</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header>
-    <h1>Título del Tema</h1>
-    <nav>
-      <a href="../../index.html">← Volver al índice</a>
-    </nav>
+    <h1>11. Manipulación de Tipos</h1>
+    <nav><a href="../../index.html">← Volver al índice</a></nav>
   </header>
-
   <main>
     <section>
-      <h2>Descripción</h2>
-      <p>Explicación introductoria al tema. Qué es, para qué sirve y cómo se usa en TypeScript.</p>
+      <h2>Type assertions y casting</h2>
+      <button id="btn-assert">Probar Assertions</button>
     </section>
-
     <section>
-      <h2>Ejemplo</h2>
-      <pre><code>// Código de ejemplo aquí
-function saludar(nombre: string): void {
-  console.log(`Hola, ${nombre}`);
-}
-</code></pre>
-      <button onclick="ejecutar()">Probar código</button>
+      <h2>Operadores de tipo</h2>
+      <button id="btn-operators">Probar Operadores</button>
     </section>
-
     <section>
       <h2>Resultado</h2>
-      <div id="resultado"></div>
+      <pre id="out-tipos"></pre>
     </section>
   </main>
-
-  <!-- <script src="script.ts"></script> -->
+  <script src="../../dist/script9.js" defer></script>
 </body>
 </html>
