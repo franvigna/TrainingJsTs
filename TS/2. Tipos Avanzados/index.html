@@ -1,41 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título del Tema - TypeScript</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Título del Tema</h1>
-    <nav>
-      <a href="../../index.html">← Volver al índice</a>
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>2. Tipos Avanzados - TypeScript</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>2. Tipos Avanzados en TypeScript</h1>
+            <nav><a href="../../index.html">← Volver al índice</a></nav>
+        </header>
 
-  <main>
-    <section>
-      <h2>Descripción</h2>
-      <p>Explicación introductoria al tema. Qué es, para qué sirve y cómo se usa en TypeScript.</p>
-    </section>
+        <main>
+            <!-- Tipos compuestos -->
+            <section>
+                <h2>• Tipos Compuestos</h2>
+                <p>Arrays, tuplas y objetos con tipos explícitos.</p>
+                <pre><code>
+<span class="comment">// Array de números</span>
+<span class="keyword">const</span> nums: <span class="keyword">number</span>[] = [1, 2, 3];
 
-    <section>
-      <h2>Ejemplo</h2>
-      <pre><code>// Código de ejemplo aquí
-function saludar(nombre: string): void {
-  console.log(`Hola, ${nombre}`);
+<span class="comment">// Tupla: longitud fija y tipos en posición</span>
+<span class="keyword">const</span> tupla: [<span class="keyword">string</span>, <span class="keyword">number</span>] = [<span class="string">"edad"</span>, <span class="string">30</span>];
+
+<span class="comment">// Objeto tipado</span>
+<span class="keyword">interface</span> Persona { nombre: <span class="keyword">string</span>; edad: <span class="keyword">number</span>; }
+<span class="keyword">const</span> p: Persona = { nombre: <span class="string">"Ana"</span>, edad: <span class="string">30</span> };
+      </code></pre>
+            </section>
+
+            <!-- Intersección y unión -->
+            <section>
+                <h2>• Intersección (&) y Unión (|)</h2>
+                <pre><code>
+<span class="comment">// Intersección</span>
+<span class="keyword">type</span> A = { a: <span class="keyword">string</span> };
+<span class="keyword">type</span> B = { b: <span class="keyword">number</span> };
+<span class="keyword">type</span> C = A &amp; B;  <span class="comment">// { a:string; b:number; }</span>
+
+<span class="comment">// Unión</span>
+<span class="keyword">type</span> ID = <span class="keyword">string</span> | <span class="keyword">number</span>;
+<span class="keyword">const</span> id1: ID = <span class="string">"abc"</span>;
+<span class="keyword">const</span> id2: ID = <span class="string">123"</span>;
+      </code></pre>
+            </section>
+
+            <!-- Literales y condicionales -->
+            <section>
+                <h2>• Literales y Condicionales</h2>
+                <pre><code>
+<span class="comment">// Literal</span>
+<span class="keyword">type</span> Direccion = <span class="string">'arriba'</span> | <span class="string">'abajo'</span> | <span class="string">'izq'</span> | <span class="string">'der'</span>;
+
+<span class="comment">// Condicional (simplificado)</span>
+<span class="keyword">type</span> IsString&lt;T&gt; = T <span class="keyword">extends</span> <span class="keyword">string</span> ? <span class="string">'es string'</span> : <span class="string">'no es string'</span>;
+<span class="keyword">type</span> R1 = IsString&lt;<span class="keyword">number</span>&gt;; <span class="comment">// "no es string"</span>
+<span class="keyword">type</span> R2 = IsString&lt;<span class="string">"hola"</span>&gt;; <span class="comment">// "es string"</span>
+      </code></pre>
+            </section>
+
+            <!-- Tipos especiales -->
+            <section>
+                <h2>• Tipos Especiales</h2>
+                <pre><code>
+<span class="comment">// any vs unknown</span>
+<span class="keyword">let</span> a: <span class="keyword">any</span> = 10;
+<span class="keyword">let</span> u: <span class="keyword">unknown</span> = <span class="string">"algo"</span>;
+
+<span class="comment">// never</span>
+<span class="keyword">function</span> fallo(msg: <span class="keyword">string</span>): <span class="keyword">never</span> {
+  <span class="keyword">throw</span> <span class="keyword">new</span> Error(msg);
 }
-</code></pre>
-      <button onclick="ejecutar()">Probar código</button>
-    </section>
 
-    <section>
-      <h2>Resultado</h2>
-      <div id="resultado"></div>
-    </section>
-  </main>
+<span class="comment">// void</span>
+<span class="keyword">function</span> loguear(msg: <span class="keyword">string</span>): <span class="keyword">void</span> {
+  console.log(msg);
+}
+      </code></pre>
+            </section>
 
-  <!-- <script src="script.ts"></script> -->
-</body>
+            <!-- Generics -->
+            <section>
+                <h2>• Generics</h2>
+                <pre><code>
+<span class="comment">// Función genérica</span>
+<span class="keyword">function</span> identidad&lt;<span class="keyword">T</span>&gt;(arg: <span class="keyword">T</span>): <span class="keyword">T</span> {
+  <span class="keyword">return</span> arg;
+}
+
+<span class="keyword">const</span> n = identidad&lt;<span class="keyword">number</span>&gt;(123);
+<span class="keyword">const</span> s = identidad(<span class="string">"texto"</span>);
+      </code></pre>
+            </section>
+
+            <!-- Botón y resultado -->
+            <section>
+                <h2>Ejecutar ejemplos</h2>
+                <button id="btn-avanzados">Cargar ejemplos avanzados</button>
+            </section>
+
+            <section>
+                <h2>Resultado</h2>
+                <div id="resultado" class="resultado"></div>
+            </section>
+        </main>
+
+        <script src="../../dist/script2.js" defer></script>
+    </body>
 </html>

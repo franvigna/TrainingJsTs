@@ -1,41 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título del Tema - TypeScript</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Título del Tema</h1>
-    <nav>
-      <a href="../../index.html">← Volver al índice</a>
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>3. Funciones en TypeScript</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>3. Funciones en TypeScript</h1>
+            <nav><a href="../../index.html">← Volver al índice</a></nav>
+        </header>
 
-  <main>
-    <section>
-      <h2>Descripción</h2>
-      <p>Explicación introductoria al tema. Qué es, para qué sirve y cómo se usa en TypeScript.</p>
-    </section>
-
-    <section>
-      <h2>Ejemplo</h2>
-      <pre><code>// Código de ejemplo aquí
-function saludar(nombre: string): void {
-  console.log(`Hola, ${nombre}`);
+        <main>
+            <!-- Definición de funciones -->
+            <section>
+                <h2>• Tipado de parámetros y retorno</h2>
+                <pre><code>
+<span class="keyword">function</span> sumar(<span class="keyword">a</span>: <span class="keyword">number</span>, <span class="keyword">b</span>: <span class="keyword">number</span>): <span class="keyword">number</span> {
+  <span class="keyword">return</span> a + b;
 }
-</code></pre>
-      <button onclick="ejecutar()">Probar código</button>
-    </section>
+      </code></pre>
+            </section>
 
-    <section>
-      <h2>Resultado</h2>
-      <div id="resultado"></div>
-    </section>
-  </main>
+            <section>
+                <h2>• Funciones anónimas y flecha</h2>
+                <pre><code>
+// Anónima con tipo
+<span class="keyword">const</span> resta: (<span class="keyword">a</span>: <span class="keyword">number</span>, <span class="keyword">b</span>: <span class="keyword">number</span>) => <span class="keyword">number</span> = <span class="keyword">function</span>(a, b) {
+  <span class="keyword">return</span> a - b;
+};
 
-  <!-- <script src="script.ts"></script> -->
-</body>
+// Flecha con tipos y parámetro opcional
+<span class="keyword">const</span> saludar = (nombre: <span class="keyword">string</span>, <span class="keyword">saludo</span>: <span class="keyword">string</span> = <span class="string">"Hola"</span>): <span class="keyword">string</span> => {
+  <span class="keyword">return</span> \`\${saludo}, \${nombre}!\`;
+};
+      </code></pre>
+            </section>
+
+            <!-- Funciones avanzadas -->
+            <section>
+                <h2>• Funciones que retornan funciones</h2>
+                <pre><code>
+<span class="keyword">function</span> crearMultiplicador(factor: <span class="keyword">number</span>) {
+  <span class="keyword">return</span> (n: <span class="keyword">number</span>) => n * factor;
+}
+<span class="keyword">const</span> dup = crearMultiplicador(2);
+      </code></pre>
+            </section>
+
+            <section>
+                <h2>• Funciones de orden superior y callbacks</h2>
+                <pre><code>
+// Orden superior
+<span class="keyword">function</span> aplicar(
+  nums: <span class="keyword">number</span>[],
+  fn: (n: <span class="keyword">number</span>) => <span class="keyword">number</span>
+): <span class="keyword">number</span>[] {
+  <span class="keyword">return</span> nums.map(fn);
+}
+
+// Callback
+<span class="keyword">const</span> resultado = aplicar([1,2,3], n <span class="keyword">=&gt;</span> n * 3);
+      </code></pre>
+            </section>
+
+            <!-- Ejecución -->
+            <section>
+                <h2>Ejecutar ejemplos</h2>
+                <button id="btn-funciones">Cargar ejemplos</button>
+            </section>
+
+            <section>
+                <h2>Resultado</h2>
+                <div id="resultado" class="resultado"></div>
+            </section>
+        </main>
+
+        <script type="module" src="../../dist/script3.js" defer></script>
+    </body>
 </html>
